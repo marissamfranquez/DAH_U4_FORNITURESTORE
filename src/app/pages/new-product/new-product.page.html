@@ -1,8 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      <ion-icon name="add"></ion-icon> Nuevo producto
-    </ion-title>
+    <ion-buttons>
+      <ion-back-button>
+      </ion-back-button>
+      <ion-title>
+        <ion-icon name="add"></ion-icon> Nuevo producto
+      </ion-title>    
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -39,7 +43,7 @@
       <ion-input required type="text"></ion-input>
     </ion-item>
   </form>
-  <ion-button  expand="block" shape="round">
+  <ion-button  expand="block" shape="round" (click)="saveProduct()">
     Guardar
   </ion-button>
 </ion-content>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
+
 
 @Component({
   selector: 'app-product-detail',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  updateProduct() {
+
+    this.router.navigateByUrl('/product-update');
+  }
 
   ngOnInit() {
   }

@@ -1,8 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      <ion-icon></ion-icon> Detalle producto
-    </ion-title>
+    <ion-buttons>
+      <ion-back-button>
+      </ion-back-button>
+      <ion-title>
+        <ion-icon></ion-icon> Detalle producto
+      </ion-title>    
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +21,7 @@
           </ion-label>
         </ion-chip>
         <ion-chip color="success" outline="true">
-          <ion-label>
+          <ion-label (click)="updateProduct()">
             <ion-icon name="refresh-circle-outline"></ion-icon>
           </ion-label>
         </ion-chip>
