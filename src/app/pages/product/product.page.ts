@@ -12,16 +12,13 @@ export class ProductPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    
   }
 
   newProduct() {
-
     this.router.navigateByUrl('/new-product');
 }
 
 detailProduct() {
-
   this.router.navigateByUrl('/product-detail');
 }
 
