@@ -1,19 +1,80 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      <ion-icon name="hammer-outline"></ion-icon> Productos</ion-title>
+      <ion-icon name="hammer-outline"></ion-icon>
+       Productos
+    </ion-title>
+      <ion-button slot="end" color="success" (click)="newProduct()">
+        <ion-icon name="add"></ion-icon>
+        <label>Nuevo</label>
+      </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item (click)="detailProduct()">
-      <ion-label>Juguetero de cedro</ion-label>
-      <ion-button expand="block" shape="round" (click)="detailProduct()">Detalles</ion-button>
-    </ion-item>
-  </ion-list>
-  <ion-button expand="block" shape="round" color="success" (click)="newProduct()">
-    <ion-icon name="add"></ion-icon>
-    <label>Nuevo</label>
-  </ion-button>
+  <ion-item>
+    
+    <ion-label position="floating" > Buscar  </ion-label>
+    <ion-icon name="search-outline" slot="end" ></ion-icon>
+    
+    <ion-input type="text"></ion-input>
+  </ion-item>
+  <ion-card-content >
+    <ion-card (click)="detailProduct()">
+      
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+     <ion-label>Juguetero de cedro</ion-label>  
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp">
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
+      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <ion-label>Precio: $1000.00</ion-label> 
+    </ion-card>
+    <ion-card (click)="detailProduct()">
+        <ion-label>Closet de madera</ion-label>   
+    </ion-card>
+    </ion-card-content>
+ 
+
 </ion-content>
