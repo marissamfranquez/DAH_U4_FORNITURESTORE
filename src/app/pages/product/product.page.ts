@@ -10,18 +10,14 @@ import { FornitureStore } from '../../models/forniture-store';
 })
 export class ProductPage implements OnInit {
 
-  product: FornitureStore[] = [];
+  product: FornitureStore[];
 
-  constructor(private router: Router, private firestore: FornitureStoreService) {
-    this.firestore.getProducts().subscribe(data => {
-      this.product = data.map(p => {
+  constructor(private router: Router, private service: FornitureStoreService) {
+    this.service.getProducts().subscribe(data => {
+      this.product = data.map(e => {
         return {
-          id: p.payload.doc.id,
-          name: p.payload.doc.get('name'),
-          price: p.payload.doc.get('price'),
-          material: p.payload.doc.get('material'),
-          size: p.payload.doc.get('size'),
-          color: p.payload.doc.get('color')
+          id: e.payload.doc.id,
+          ... e.payload.doc.data() as any
         } as FornitureStore;
       });
     });
@@ -33,14 +29,19 @@ export class ProductPage implements OnInit {
     this.router.navigateByUrl('/new-product');
   }
 
-  detailProduct() {
+  detailProduct(product: FornitureStore) {
+    let navext: NavigationExtras = {
+      queryParams:{
+        special: JSON.stringify(product)
+      }
+    };
     this.router.navigateByUrl('/product-detail');
   }
   login() {
     this.router.navigateByUrl('/home');
   }
   signOut() {
-    this.firestore.signOut();
+    this.service.signOut();
   }
 
 

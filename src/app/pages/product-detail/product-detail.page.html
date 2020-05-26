@@ -4,7 +4,7 @@
       <ion-back-button>
       </ion-back-button>
       <ion-title>
-        <ion-icon></ion-icon> Detalle producto
+        <ion-icon></ion-icon>Detalle producto
       </ion-title>
     </ion-buttons>
   </ion-toolbar>
@@ -16,12 +16,12 @@
     <ion-card-content>
 
       <ion-card color="dark">
-        <ion-card-content *ngFor="let Products of product">
-          <strong>Nombre del producto: {{Products.name}}</strong>
-          <p>Precio: ${{Products.price}}</p>
-          <p>Tamaño: {{Products.size}}</p>
-          <p>Color: {{Products.color}}</p>
-          <p>Material: {{Products.material}}</p>
+        <ion-card-content>
+          <strong>Nombre del producto: {{product.name}}</strong>
+          <p>Precio: ${{product.price}}</p>
+          <p>Tamaño: {{product.size}}</p>
+          <p>Color: {{product.color}}</p>
+          <p>Material: {{product.material}}</p>
 
         </ion-card-content>
       </ion-card>

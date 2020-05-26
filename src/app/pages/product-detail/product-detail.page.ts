@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FornitureStoreService } from '../../services/forniture-store.service';
 import { FornitureStore } from '../../models/forniture-store';
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -11,22 +12,19 @@ import { FornitureStore } from '../../models/forniture-store';
 })
 export class ProductDetailPage implements OnInit {
 
-  product: FornitureStore[] = [];
+  product: FornitureStore;
 
-  constructor(private router: Router, private firestore: FornitureStoreService) {
-    this.firestore.getProducts().subscribe(data => {
-      this.product = data.map(p => {
-        return {
-          id: p.payload.doc.id,
-          name: p.payload.doc.get('name'),
-          price: p.payload.doc.get('price'),
-          material: p.payload.doc.get('material'),
-          size: p.payload.doc.get('size'),
-          color: p.payload.doc.get('color')
-        } as FornitureStore;
-      });
-    });
-   }
+  constructor(private router: Router, private service: FornitureStoreService,
+              private actroute: ActivatedRoute, private toast: ToastController) {
+                this.actroute.queryParams.subscribe(
+                  params => {
+                    if (params && params.special){
+                      this.product = JSON.parse(params.special) as FornitureStore;
+                      console.log(this.product);
+                    }
+                  }
+                );
+  }
 
   updateProduct() {
 
