@@ -50,7 +50,7 @@ export class FornitureStoreService {
     });
     await alert.present();
   }
-  saveFoodtoGo(product: FornitureStore) {
+  saveProduct(product: FornitureStore) {
     return this.firestore.collection('products').add(product);
   }
 

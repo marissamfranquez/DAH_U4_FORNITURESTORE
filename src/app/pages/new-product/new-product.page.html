@@ -11,39 +11,39 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <form class="ion-padding">
+  <form [formGroup]="myform" class="ion-padding" >
     <ion-item>
       <ion-label position="floating">Nombre del mueble <ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input required type="text"></ion-input>
+      <ion-input required type="text" formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Precio (#.##)<ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input required type="text"></ion-input>
+      <ion-input required type="text" formControlName="price"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label  position="floating">Material<ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input required type="text"></ion-input>
+      <ion-input required type="text" formControlName="material"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label  position="floating">Medidas<ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input required type="text"></ion-input>
+      <ion-input required type="text" formControlName="size"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label  position="floating">Color<ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input required type="text"></ion-input>
+      <ion-input required type="text" formControlName="color"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Imagen<ion-text color="danger">*</ion-text>
       </ion-label>
-      <ion-input required type="text"></ion-input>
+      <ion-input required type="text" formControlName="image"></ion-input>
     </ion-item>
   </form>
-  <ion-button style="padding-left: 50px; padding-right: 50px;" expand="block" color="success" fill="outline" shape="round" (click)="saveProduct()">
+  <ion-button style="padding-left: 50px; padding-right: 50px;" expand="block" color="success" fill="outline" shape="round" (click)="newProduct()">
     Guardar
   </ion-button>
 </ion-content>
