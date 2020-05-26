@@ -4,7 +4,7 @@
       <ion-back-button>
       </ion-back-button>
       <ion-title>
-        <ion-icon></ion-icon>Detalle producto
+        <ion-icon></ion-icon>{{product.name}}
       </ion-title>
     </ion-buttons>
   </ion-toolbar>
@@ -56,9 +56,9 @@
 
     </ion-card-content>
     <ion-card>
-      <ion-card-content *ngFor="let Products of product">
+      <ion-card-content >
         <ion-note slot="end">
-          <strong>{{Products.name}}</strong>
+          <strong>{{product.name}}</strong>
           <ion-chip color="danger" outline="true">
             <ion-label>
               <ion-icon name="close-circle-outline"></ion-icon>
