@@ -10,11 +10,11 @@ import { Router, NavigationExtras } from '@angular/router';
 
 export class HomePage {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   signIn() {
 
     this.router.navigateByUrl('/product');
-}
+  }
 
 }

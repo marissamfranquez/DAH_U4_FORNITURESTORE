@@ -4,7 +4,11 @@
       <ion-icon name="hammer-outline"></ion-icon>
        Productos
     </ion-title>
-      <ion-button slot="end" color="success" (click)="newProduct()">
+    <ion-button style="margin-right: 1%;" slot="end" color="success" fill="outline" (click)="login()">
+      <ion-icon name="walk-outline"></ion-icon>
+      <label>Iniciar sesión</label>
+    </ion-button>
+      <ion-button style="margin-right: 1%;" slot="end" color="success" (click)="newProduct()">
         <ion-icon name="add"></ion-icon>
         <label>Nuevo</label>
       </ion-button>
@@ -12,10 +16,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
+  <ion-item style="margin-left: 5%; margin-right: 5%;"> 
     
-    <ion-label position="floating" > Buscar  </ion-label>
-    <ion-icon name="search-outline" slot="end" ></ion-icon>
+    <ion-label position="floating"> Buscar  </ion-label>
+    <ion-icon name="search-outline" slot="start" ></ion-icon>
     
     <ion-input type="text"></ion-input>
   </ion-item>
@@ -23,56 +27,43 @@
     <ion-card (click)="detailProduct()">
       
       <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-     <ion-label>Juguetero de cedro</ion-label>  
+     <ion-label>Juguetero de cedro</ion-label>  <br>
       <ion-label>Precio: $1000.00</ion-label> 
     </ion-card>
     <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <img src="https://www.officedepot.com.mx/medias/41852-2.gif-515ftw?context=bWFzdGVyfHJvb3R8MjYxODl8aW1hZ2UvanBlZ3xoMGIvaDQzLzk0MTY3OTczNTYwNjIuanBnfGE2YjA2ZjRlZjEyNmViNzE3NjExMDI0ZThmNGYxZjEzYzViYTczNWNlMzBiNjFlZTk3YzU0NWQ3YjAzN2U1NWY" >
+      <ion-label>Librero</ion-label>  <br>
       <ion-label>Precio: $1000.00</ion-label> 
     </ion-card>
     <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <img src="https://inlabmuebles.com/wp-content/uploads/2017/10/librero-bankole.jpg" >
+      <ion-label>Esquinero</ion-label>  <br>
       <ion-label>Precio: $1000.00</ion-label> 
     </ion-card>
     <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <img src="https://http2.mlstatic.com/librero-esquinero-D_NQ_NP_923267-MLM32849237857_112019-F.jpg" >
+      <ion-label>Esquinero moderno</ion-label>  <br>
       <ion-label>Precio: $1000.00</ion-label> 
     </ion-card>
     <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <img src="https://resources.sears.com.mx/medios-plazavip/fotos/productos_sears1/original/2902256.jpg" >
+      <ion-label>Sofá cama</ion-label>  <br>
       <ion-label>Precio: $1000.00</ion-label> 
     </ion-card>
     <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <img src="https://resources.sears.com.mx/medios-plazavip/fotos/productos_sears1/original/2717715.jpg" >
+      <ion-label>Comedor 4 sillas</ion-label>  <br>
       <ion-label>Precio: $1000.00</ion-label> 
     </ion-card>
     <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <img src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2019/02/11/15499052362149.jpg" >
+      <ion-label>Mesa de centro</ion-label>  <br>
       <ion-label>Precio: $1000.00</ion-label> 
     </ion-card>
     <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-      <ion-label>Juguetero de cedro</ion-label>  <br>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS4-BHCnnDGGW06pp7OzjCCPU-FOgCGOZRjeqat7zJ5gsecbilP&usqp=CAU" >
+      <ion-label>Porta microondas</ion-label>  <br>
       <ion-label>Precio: $1000.00</ion-label> 
-    </ion-card>
-    <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp">
-      <ion-label>Juguetero de cedro</ion-label>  <br>
-      <ion-label>Precio: $1000.00</ion-label> 
-    </ion-card>
-    <ion-card (click)="detailProduct()">
-      <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" >
-      <ion-label>Juguetero de cedro</ion-label>  <br>
-      <ion-label>Precio: $1000.00</ion-label> 
-    </ion-card>
-    <ion-card (click)="detailProduct()">
-        <ion-label>Closet de madera</ion-label>   
     </ion-card>
     </ion-card-content>
  

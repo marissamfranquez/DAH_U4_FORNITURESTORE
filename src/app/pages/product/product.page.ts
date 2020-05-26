@@ -16,11 +16,14 @@ export class ProductPage implements OnInit {
 
   newProduct() {
     this.router.navigateByUrl('/new-product');
-}
+  }
 
-detailProduct() {
-  this.router.navigateByUrl('/product-detail');
-}
+  detailProduct() {
+    this.router.navigateByUrl('/product-detail');
+  }
+  login() {
+    this.router.navigateByUrl('/home');
+  }
 
 
 }
