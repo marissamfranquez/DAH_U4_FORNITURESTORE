@@ -25,17 +25,20 @@ export class ProductPage implements OnInit {
   ngOnInit() {
   }
 
-  newProduct() {
-    this.router.navigateByUrl('/new-product');
-  }
-
   detailProduct(product: FornitureStore) {
     let navext: NavigationExtras = {
       queryParams:{
         special: JSON.stringify(product)
       }
     };
-    this.router.navigateByUrl('/product-detail');
+    this.router.navigate(['/product-detail'], navext);
+  }
+  update(product: FornitureStore){
+    this.service.updateProducts(product, product.id);
+  }
+
+  newProduct() {
+    this.router.navigateByUrl('/new-product');
   }
   login() {
     this.router.navigateByUrl('/home');

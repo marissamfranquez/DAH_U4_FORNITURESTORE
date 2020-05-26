@@ -57,4 +57,8 @@ export class FornitureStoreService {
   getProducts() {
     return this.firestore.collection('products').snapshotChanges();
   }
+
+  updateProducts(product: FornitureStore, id: string){
+    this.firestore.doc('products/' + id).update(product);
+  }
 }
