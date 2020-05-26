@@ -26,9 +26,9 @@
     
     <ion-input type="text"></ion-input>
   </ion-item>
-  <ion-card-content >
-    <ion-card tappable (click)="detailProduct(product)" *ngFor="let Products of product">
-      <ion-card-content > 
+  <ion-card-content  >
+    <ion-card  *ngFor="let Products of product" >
+      <ion-card-content tappable (click) = "detailProduct(Products)" > 
         <img src={{Products.image}} >
         <ion-label>{{Products.name}}</ion-label>  <br>
          <ion-label>Precio: ${{Products.price}}</ion-label> 

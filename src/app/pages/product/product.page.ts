@@ -10,7 +10,7 @@ import { FornitureStore } from '../../models/forniture-store';
 })
 export class ProductPage implements OnInit {
 
-  product: FornitureStore[];
+  public product: FornitureStore[];
 
   constructor(private router: Router, private service: FornitureStoreService) {
     this.service.getProducts().subscribe(data => {
@@ -35,7 +35,7 @@ export class ProductPage implements OnInit {
         special: JSON.stringify(product)
       }
     };
-    this.router.navigateByUrl('/product-detail');
+    this.router.navigate(['/product-detail'],navext);
   }
   login() {
     this.router.navigateByUrl('/home');
