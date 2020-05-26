@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router, NavigationExtras } from '@angular/router';
+import {FornitureStoreService } from '../services/forniture-store.service';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +9,24 @@ import { Router, NavigationExtras } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 
-export class HomePage {
+export class HomePage implements OnInit{
 
-  constructor(private router: Router) { }
+  public myform: FormGroup;
+  constructor(private router: Router, private fb: FormBuilder, private firestore: FornitureStoreService) { 
+    this.firestore.Auth();
+  }
+
+  ngOnInit() {
+    this.myform = this.fb.group({
+      email: [''],
+      password: ['']
+    });
+  }
 
   signIn() {
-
-    this.router.navigateByUrl('/product');
+    const email = this.myform.get('email').value;
+    const password = this.myform.get('password').value;
+    this.firestore.OnRegister(email, password);
   }
 
 }
