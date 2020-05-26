@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>
       <ion-icon name="hammer-outline"></ion-icon>
-      Productos
+       Productos
     </ion-title>
     <ion-button style="margin-right: 1%;" slot="end" color="success" fill="outline" (click)="login()">
       <ion-icon name="walk-outline"></ion-icon>
@@ -11,33 +11,30 @@
     <ion-button style="margin-right: 1%;" slot="end" color="danger" (click)="signOut()">
       Cerrar sesión
     </ion-button>
-    <ion-button style="margin-right: 1%;" slot="end" color="success" (click)="newProduct()">
-      <ion-icon name="add"></ion-icon>
-      <label>Nuevo</label>
-    </ion-button>
+      <ion-button style="margin-right: 1%;" slot="end" color="success" (click)="newProduct()">
+        <ion-icon name="add"></ion-icon>
+        <label>Nuevo</label>
+      </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item style="margin-left: 5%; margin-right: 5%;">
-
-    <ion-label position="floating"> Buscar </ion-label>
-    <ion-icon name="search-outline" slot="start"></ion-icon>
-
+  <ion-item style="margin-left: 5%; margin-right: 5%;"> 
+    
+    <ion-label position="floating"> Buscar  </ion-label>
+    <ion-icon name="search-outline" slot="start" ></ion-icon>
+    
     <ion-input type="text"></ion-input>
   </ion-item>
-  <ion-card-content>
-    <ion-card *ngFor="let Products of product">
-      <ion-card-content>
-        <div tappable (click)="detailProduct(product)">
-          <img src={{Products.image}}>
-          <ion-label>{{Products.name}}</ion-label> <br>
-          <ion-label>Precio: ${{Products.price}}</ion-label>
-        </div>
-
+  <ion-card-content  >
+    <ion-card  *ngFor="let Products of product" >
+      <ion-card-content tappable (click) = "detailProduct(Products)" > 
+        <img src={{Products.image}} >
+        <ion-label>{{Products.name}}</ion-label>  <br>
+         <ion-label>Precio: ${{Products.price}}</ion-label> 
       </ion-card-content>
     </ion-card>
-  </ion-card-content>
-
+    </ion-card-content>
+ 
 
 </ion-content>
