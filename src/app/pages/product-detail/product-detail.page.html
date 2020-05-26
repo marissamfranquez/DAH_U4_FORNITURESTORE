@@ -5,46 +5,74 @@
       </ion-back-button>
       <ion-title>
         <ion-icon></ion-icon> Detalle producto
-      </ion-title>    
+      </ion-title>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
-    <ion-card>
-      <ion-card-content>
-        <strong>Jueguetero de cedro</strong>
-      <ion-note slot="end">
-        <ion-chip color="danger" outline="true">
-          <ion-label>
-            <ion-icon name="close-circle-outline"></ion-icon>
-          </ion-label>
-        </ion-chip>
-        <ion-chip color="success" outline="true">
-          <ion-label (click)="updateProduct()">
-            <ion-icon name="refresh-circle-outline"></ion-icon>
-          </ion-label>
-        </ion-chip>
-      </ion-note>
-      </ion-card-content>
-      <ion-card-content>
-        <ion-slides>
+
+  <ion-card>
+    <ion-card-content>
+
+      <ion-card color="dark">
+        <ion-card-content *ngFor="let Products of product">
+          <strong>Nombre del producto: {{Products.name}}</strong>
+          <p>Precio: ${{Products.price}}</p>
+          <p>Tamaño: {{Products.size}}</p>
+          <p>Color: {{Products.color}}</p>
+          <p>Material: {{Products.material}}</p>
+
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card>
+        <p style="text-align: center;">GALERÍA DEL PRODUCTO</p>
+        <ion-slides mode="ios" pager="ios" class="slides">
           <ion-slide>
-            <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp" width="300px" height="400px">
+            <img
+              src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_945020-MLM40617979259_012020-O.webp"
+              width="300px" height="400px">
           </ion-slide>
           <ion-slide>
-            <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_709868-MLM40617985155_012020-O.webp" width="300px" height="400px">
+            <img
+              src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_709868-MLM40617985155_012020-O.webp"
+              width="300px" height="400px">
           </ion-slide>
           <ion-slide>
-            <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_993161-MLM40617972379_012020-F.webp" width="300px" height="400px">
+            <img
+              src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_993161-MLM40617972379_012020-F.webp"
+              width="300px" height="400px">
           </ion-slide>
           <ion-slide>
-            <img src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_806795-MLM40617958708_012020-O.webp" width="300px" height="400px">
+            <img
+              src="https://http2.mlstatic.com/librero-gaia-evo-madera-moderno-mueble-juguetero-gris-D_NQ_NP_806795-MLM40617958708_012020-O.webp"
+              width="300px" height="400px">
           </ion-slide>
         </ion-slides>
+
+      </ion-card>
+
+
+    </ion-card-content>
+    <ion-card>
+      <ion-card-content *ngFor="let Products of product">
+        <ion-note slot="end">
+          <strong>{{Products.name}}</strong>
+          <ion-chip color="danger" outline="true">
+            <ion-label>
+              <ion-icon name="close-circle-outline"></ion-icon>
+            </ion-label>
+          </ion-chip>
+          <ion-chip color="success" outline="true">
+            <ion-label (click)="updateProduct()">
+              <ion-icon name="refresh-circle-outline"></ion-icon>
+            </ion-label>
+          </ion-chip>
+        </ion-note>
       </ion-card-content>
     </ion-card>
-  
+  </ion-card>
+
 
 </ion-content>

@@ -50,4 +50,11 @@ export class FornitureStoreService {
     });
     await alert.present();
   }
+  saveFoodtoGo(product: FornitureStore) {
+    return this.firestore.collection('products').add(product);
+  }
+
+  getProducts() {
+    return this.firestore.collection('products').snapshotChanges();
+  }
 }
