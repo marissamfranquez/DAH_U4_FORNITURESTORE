@@ -12,12 +12,21 @@ import { FornitureStore } from '../../models/forniture-store';
 })
 export class NewProductPage implements OnInit {
 
-  myform: FormGroup;
-  public model: FornitureStore;
+  public myform: FormGroup;
+  public product: FornitureStore;
 
   constructor(private fb: FormBuilder, private service: FornitureStoreService, private router: Router) { this.validate(); }
 
   ngOnInit() {
+    this.myform = this.fb.group({
+      name: [''],
+      price: [''],
+      material: [''],
+      size: [''],
+      color: [''],
+      image: [''],
+    });
+
   }
 
   validate() {
@@ -37,15 +46,15 @@ export class NewProductPage implements OnInit {
       return;
 
     } else {
-      this.model = {
+      this.product = {
         name: this.myform.controls.name.value,
-        price: this.myform.controls.controlnumber.value,
-        material: this.myform.controls.age.value,
-        size: this.myform.controls.curp.value,
-        color: this.myform.controls.active.value,
-        image: this.myform.controls.active.value
+        price: this.myform.controls.price.value,
+        material: this.myform.controls.material.value,
+        size: this.myform.controls.size.value,
+        color: this.myform.controls.color.value,
+        image: this.myform.controls.image.value
       };
-      this.service.saveProduct(this.model)
+      this.service.saveProduct(this.product)
 
         .then(() => {
           this.myform.get('name').setValue('');

@@ -43,7 +43,7 @@
       <ion-input required type="text" formControlName="image"></ion-input>
     </ion-item>
   </form>
-  <ion-button style="padding-left: 50px; padding-right: 50px;" expand="block" color="success" fill="outline" shape="round" (click)="newProduct()">
+  <ion-button style="padding-left: 50px; padding-right: 50px;" expand="block" color="success" fill="outline" shape="round" [disabled]="!myform.valid" (click)="newProduct()">
     Guardar
   </ion-button>
 </ion-content>
