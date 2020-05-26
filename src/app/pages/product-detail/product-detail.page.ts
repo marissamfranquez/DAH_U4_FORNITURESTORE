@@ -33,5 +33,18 @@ export class ProductDetailPage implements OnInit {
 
   ngOnInit() {
   }
+  delete(id: string){
+    this.service.deleteProducts(id);
+    this.presentToast();
+    this.router.navigate(['/product']);
+  }
+
+  async presentToast(){
+    const t = await this.toast.create({
+      message: 'Producto eliminado',
+      duration: 2000
+    });
+    t.present();
+  }
 
 }

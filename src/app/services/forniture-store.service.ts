@@ -61,4 +61,7 @@ export class FornitureStoreService {
   updateProducts(product: FornitureStore, id: string){
     this.firestore.doc('products/' + id).update(product);
   }
+  deleteProducts(id: string){
+    this.firestore.doc('products/' + id).delete();
+  }
 }
