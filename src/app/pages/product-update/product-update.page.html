@@ -1,15 +1,17 @@
 <ion-header [translucent]="true">
-  <ion-buttons>
-    <ion-back-button>
-    </ion-back-button>
-    <ion-title>
-      <ion-icon name="refresh-circle-outline"></ion-icon> Actualizar producto
-    </ion-title>    
-  </ion-buttons>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button>
+      </ion-back-button>
+      <ion-title>
+        <ion-icon name="refresh"></ion-icon> Actualizar producto
+      </ion-title>    
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <form>
+  <form class="ion-padding"> 
     <ion-item>
       <ion-label position="floating">Nombre del mueble <ion-text color="danger">*</ion-text>
       </ion-label>
@@ -41,7 +43,7 @@
       <ion-input required type="text"></ion-input>
     </ion-item>
   </form>
-  <ion-button  expand="block" shape="round" (click)="updateProduct()">
+  <ion-button   style="padding-left: 50px; padding-right: 50px;" expand="block" color="success" fill="outline" shape="round" (click)="updateProduct()">
     Actualizar
   </ion-button>
 </ion-content>
