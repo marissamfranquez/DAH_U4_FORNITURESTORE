@@ -10,20 +10,17 @@ import { FornitureStore } from '../../models/forniture-store';
 })
 export class ProductPage implements OnInit {
 
-  public product: FornitureStore[];
+  public product: FornitureStore[] = [];
+  search: string;
 
   constructor(private router: Router, private service: FornitureStoreService) {
-    this.service.getProducts().subscribe(data => {
-      this.product = data.map(e => {
-        return {
-          id: e.payload.doc.id,
-          ... e.payload.doc.data() as any
-        } as FornitureStore;
-      });
-    });
+   this.getAll();
+   
    }
   ngOnInit() {
   }
+ 
+ 
 
   newProduct() {
     this.router.navigateByUrl('/new-product');
@@ -44,5 +41,24 @@ export class ProductPage implements OnInit {
     this.service.signOut();
   }
 
+  getAll(): void {
+    this.service.getProducts().subscribe(data => {
+      this.product = data.map(e => {
+        return {
+          id: e.payload.doc.id,
+          ... e.payload.doc.data() as any
+        } as FornitureStore;
+      });
+    });
 
+  }
+
+  filter(): void{
+   // this.getAll();
+    if (this.search && this.search.trim()){
+      this.product = this.product.filter((product) => {
+        return (product.name.toLocaleLowerCase().indexOf(this.search.toLocaleLowerCase()) > -1);
+      });
+    }
+  }
 }

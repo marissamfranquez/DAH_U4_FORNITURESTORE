@@ -9,7 +9,7 @@ import { AlertController } from '@ionic/angular';
   providedIn: 'root'
 })
 export class FornitureStoreService {
-
+  
   constructor(private alertController: AlertController, public fAuth: AngularFireAuth,
               private router: Router, private firestore: AngularFirestore) { }
 
