@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router,NavigationExtras } from '@angular/router';
 import { FornitureStoreService } from '../../services/forniture-store.service';
 import { FornitureStore } from '../../models/forniture-store';
 import { ToastController } from '@ionic/angular';
@@ -46,5 +46,16 @@ export class ProductDetailPage implements OnInit {
     });
     t.present();
   }
+
+  detailProduct(product: FornitureStore) {
+    let navext: NavigationExtras = {
+      queryParams:{
+        special: JSON.stringify(product)
+      }
+    };
+    this.router.navigate(['/product-update'],navext);
+  }
+
+  
 
 }
