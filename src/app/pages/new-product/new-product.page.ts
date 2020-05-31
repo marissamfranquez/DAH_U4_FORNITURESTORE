@@ -25,6 +25,10 @@ export class NewProductPage implements OnInit {
       size: [''],
       color: [''],
       image: [''],
+      slider1: [''],
+      slider2: [''],
+      slider3: [''],
+      slider4: ['']
     });
 
   }
@@ -37,6 +41,10 @@ export class NewProductPage implements OnInit {
       size: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
       color: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       image: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+      slider1: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+      slider2: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+      slider3: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
+      slider4: ['', Validators.compose([Validators.required, Validators.minLength(10)])]
     });
   }
   newProduct() {
@@ -52,7 +60,11 @@ export class NewProductPage implements OnInit {
         material: this.myform.controls.material.value,
         size: this.myform.controls.size.value,
         color: this.myform.controls.color.value,
-        image: this.myform.controls.image.value
+        image: this.myform.controls.image.value,
+        slider1: this.myform.controls.slider1.value,
+        slider2: this.myform.controls.slider2.value,
+        slider3: this.myform.controls.slider3.value,
+        slider4: this.myform.controls.slider4.value
       };
       this.service.saveProduct(this.product)
 
@@ -63,6 +75,10 @@ export class NewProductPage implements OnInit {
           this.myform.get('size').setValue('');
           this.myform.get('color').setValue('');
           this.myform.get('image').setValue('');
+          this.myform.get('slider1').setValue('');
+          this.myform.get('slider2').setValue('');
+          this.myform.get('slider3').setValue('');
+          this.myform.get('slider4').setValue('');
         })
         .catch(() => {
           this.service.showMessageAlert('Alerta', 'Error');
