@@ -10,30 +10,21 @@ import { FornitureStore } from '../../models/forniture-store';
   templateUrl: './new-product.page.html',
   styleUrls: ['./new-product.page.scss'],
 })
+// tslint:disable-next-line: component-class-suffix
 export class NewProductPage implements OnInit {
 
   public myform: FormGroup;
   public product: FornitureStore;
 
-  constructor(private fb: FormBuilder, private service: FornitureStoreService, private router: Router) { this.validate(); }
-
-  ngOnInit() {
-    this.myform = this.fb.group({
-      name: [''],
-      price: [''],
-      material: [''],
-      size: [''],
-      color: [''],
-      image: [''],
-      slider1: [''],
-      slider2: [''],
-      slider3: [''],
-      slider4: ['']
-    });
-
+  constructor(private fb: FormBuilder, private service: FornitureStoreService, private router: Router) {
+    this.initForm();
   }
 
-  validate() {
+  ngOnInit() {
+    this.initForm();
+  }
+
+  initForm() {
     this.myform = this.fb.group({
       name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       price: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]+.[0-9]{2}')])],
@@ -48,9 +39,8 @@ export class NewProductPage implements OnInit {
     });
   }
   newProduct() {
-
     if (!this.myform.valid) {
-      this.service.showMessageAlert('Alerta', 'valores incorrectos');
+      this.service.showMessageAlert('Alerta', 'Campos llenados incorrectamente');
       return;
 
     } else {

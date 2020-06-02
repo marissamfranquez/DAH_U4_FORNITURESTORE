@@ -45,7 +45,7 @@ export class ProductUpdatePage implements OnInit {
   initForm() {
     this.myForm = this.formBuilder.group({
       name: ['', Validators.compose([Validators.required])],
-      price: ['', Validators.compose([Validators.required])],
+      price: ['', Validators.compose([Validators.required]), Validators.pattern('[0-9]+.[0-9]{2}')],
       material: ['', Validators.compose([Validators.required])],
       size: ['', Validators.compose([Validators.required])],
       color: ['', Validators.compose([Validators.required])],
