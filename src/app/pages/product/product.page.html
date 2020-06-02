@@ -4,14 +4,14 @@
       <ion-icon name="hammer-outline"></ion-icon>
       Productos
     </ion-title>
-    <ion-button style="margin-right: 1%;" slot="end" color="success" fill="outline" (click)="login()">
+    <ion-button [style.display]="isVisibleSigInButton ? 'block' : 'none'" style="margin-right: 1%;" slot="end" color="success" fill="outline" (click)="login()">
       <ion-icon name="walk-outline"></ion-icon>
       <label>Iniciar sesión</label>
     </ion-button>
-    <ion-button style="margin-right: 1%;" slot="end" color="danger" (click)="signOut()">
+    <ion-button [style.display]="isVisibleSigOutButton ? 'block' : 'none'" style="margin-right: 1%;" slot="end" color="danger" (click)="signOut()">
       Cerrar sesión
     </ion-button>
-    <ion-button style="margin-right: 1%;" slot="end" color="success" (click)="newProduct()">
+    <ion-button [style.display]="isVisibleNewButton ? 'block' : 'none'" style="margin-right: 1%;" slot="end" color="success" (click)="newProduct()">
       <ion-icon name="add"></ion-icon>
       <label>Nuevo</label>
     </ion-button>

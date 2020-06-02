@@ -9,10 +9,11 @@ import {FornitureStoreService } from '../services/forniture-store.service';
   styleUrls: ['home.page.scss'],
 })
 
+// tslint:disable-next-line: component-class-suffix
 export class HomePage implements OnInit{
 
   public myform: FormGroup;
-  constructor(private router: Router, private fb: FormBuilder, private firestore: FornitureStoreService) { 
+  constructor(private router: Router, private fb: FormBuilder, private firestore: FornitureStoreService) {
     this.firestore.Auth();
   }
 
