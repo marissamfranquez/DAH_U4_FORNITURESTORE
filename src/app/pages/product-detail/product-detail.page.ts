@@ -27,7 +27,6 @@ export class ProductDetailPage implements OnInit {
   }
 
   updateProduct() {
-
     this.router.navigateByUrl('/product-update');
   }
 
@@ -48,14 +47,12 @@ export class ProductDetailPage implements OnInit {
   }
 
   detailProduct(product: FornitureStore) {
-    let navext: NavigationExtras = {
+    const navext: NavigationExtras = {
       queryParams:{
         special: JSON.stringify(product)
       }
     };
     this.router.navigate(['/product-update'],navext);
   }
-
-  
 
 }
