@@ -22,10 +22,10 @@ export class ProductPage implements OnInit {
               private alertController: AlertController) {
     this.getAll();
     this.startTimer();
+    this.service.Auth();
    }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   startTimer() {
     setInterval(() => {
