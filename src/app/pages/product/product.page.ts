@@ -31,7 +31,7 @@ export class ProductPage implements OnInit {
     setInterval(() => {
       if (this.userExist !== FornitureStoreService.userExist) {
         this.userExist = FornitureStoreService.userExist;
-        if (FornitureStoreService.userExist) {
+        if (this.userExist) {
           this.enableSigInButton(false);
           this.enableSigOutButton(true);
           this.enableNewButton(true);
