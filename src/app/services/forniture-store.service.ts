@@ -45,6 +45,17 @@ export class FornitureStoreService {
       }
     });
   }
+
+  onlyEventAuth() {
+    this.fAuth.onAuthStateChanged((user) => {
+      if (user) {
+        FornitureStoreService.userExist = true;
+      } else {
+        FornitureStoreService.userExist = false;
+      }
+    });
+  }
+
   goTo(traslado: string) {
     this.router.navigate([traslado]);
   }

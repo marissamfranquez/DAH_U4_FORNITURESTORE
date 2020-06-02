@@ -13,38 +13,38 @@
 <ion-content [fullscreen]="true">
   <form class="ion-padding" [formGroup]="myForm">
     <ion-item>
-      <ion-label>Nombre <ion-text color="danger">{{product.name}}</ion-text>
+      <ion-label position="floating">Nombre: <ion-text color="danger">{{product.name}}</ion-text>
       </ion-label>
       <ion-input required type="text" formControlName="name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Precio (#.##)<ion-text color="danger">{{product.price}}</ion-text>
+      <ion-label position="floating">Precio (#.##): <ion-text color="danger">{{product.price}}</ion-text>
       </ion-label>
       <ion-input required type="number" formControlName="price"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Material<ion-text color="danger">{{product.material}}</ion-text>
+      <ion-label position="floating">Material: <ion-text color="danger">{{product.material}}</ion-text>
       </ion-label>
       <ion-input required type="text" formControlName="material"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Medidas<ion-text color="danger">{{product.size}}</ion-text>
+      <ion-label position="floating">Medidas: <ion-text color="danger">{{product.size}}</ion-text>
       </ion-label>
       <ion-input required type="text" formControlName="size"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Color<ion-text color="danger">{{product.color}}</ion-text>
+      <ion-label position="floating">Color: <ion-text color="danger">{{product.color}}</ion-text>
       </ion-label>
       <ion-input required type="text" formControlName="color"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Imagen<ion-text color="danger"></ion-text>
+      <ion-label position="floating">Imagen: <ion-text color="danger">{{product.image}}</ion-text>
       </ion-label>
-      <ion-input required type="text" formControlName="image"></ion-input>{{product.image}}
+      <ion-input required type="text" formControlName="image"></ion-input>
     </ion-item>
   </form>
   <ion-button style="padding-left: 50px; padding-right: 50px;" expand="block" color="success" fill="outline"
-    shape="round" (click)="updateProduct()">
+    shape="round" (click)="updateProduct()" [disabled]="!myForm.valid">
     Actualizar
   </ion-button>
 </ion-content>

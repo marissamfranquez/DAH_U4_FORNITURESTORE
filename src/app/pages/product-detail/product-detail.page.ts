@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router,NavigationExtras } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { FornitureStoreService } from '../../services/forniture-store.service';
 import { FornitureStore } from '../../models/forniture-store';
 import { ToastController } from '@ionic/angular';
@@ -10,9 +10,11 @@ import { ToastController } from '@ionic/angular';
   templateUrl: './product-detail.page.html',
   styleUrls: ['./product-detail.page.scss'],
 })
+// tslint:disable-next-line: component-class-suffix
 export class ProductDetailPage implements OnInit {
-
+  areVisibleButtons = false;
   product: FornitureStore;
+  userExist = false;
 
   constructor(private router: Router, private service: FornitureStoreService,
               private actroute: ActivatedRoute, private toast: ToastController) {
@@ -24,14 +26,25 @@ export class ProductDetailPage implements OnInit {
                     }
                   }
                 );
+                this.service.onlyEventAuth();
+                this.startTimer();
   }
 
   updateProduct() {
     this.router.navigateByUrl('/product-update');
   }
 
-  ngOnInit() {
+  startTimer() {
+    setInterval(() => {
+      if (this.userExist !== FornitureStoreService.userExist) {
+        this.userExist = FornitureStoreService.userExist;
+        this.areVisibleButtons = this.userExist;
+      }
+    }, 1000);
   }
+
+  ngOnInit() { }
+
   delete(id: string){
     this.service.deleteProducts(id);
     this.presentToast();
@@ -48,11 +61,11 @@ export class ProductDetailPage implements OnInit {
 
   detailProduct(product: FornitureStore) {
     const navext: NavigationExtras = {
-      queryParams:{
+      queryParams: {
         special: JSON.stringify(product)
       }
     };
-    this.router.navigate(['/product-update'],navext);
+    this.router.navigate(['/product-update'], navext);
   }
 
 }
