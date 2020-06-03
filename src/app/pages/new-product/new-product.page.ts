@@ -40,7 +40,7 @@ export class NewProductPage implements OnInit {
       return;
 
     } else {
-      if (this.sliders.length > 0 && this.myform.get('haveGalery').value as boolean) {
+      if (this.sliders.length > 0 && this.myform.get('haveGalery').value) {
         this.product = {
           name: this.myform.controls.name.value,
           price: this.myform.controls.price.value,

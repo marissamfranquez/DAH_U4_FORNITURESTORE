@@ -22,7 +22,7 @@ export class ProductPage implements OnInit {
               private alertController: AlertController) {
     this.getAll();
     this.startTimer();
-    this.service.Auth();
+    this.service.onlyEventAuth();
    }
 
   ngOnInit() { }
