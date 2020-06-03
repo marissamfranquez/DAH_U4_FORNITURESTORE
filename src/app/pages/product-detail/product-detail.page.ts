@@ -40,7 +40,7 @@ export class ProductDetailPage implements OnInit {
         this.userExist = FornitureStoreService.userExist;
         this.areVisibleButtons = this.userExist;
       }
-    }, 1000);
+    }, 500);
   }
 
   ngOnInit() { }

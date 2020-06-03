@@ -4,7 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { FornitureStore } from '../models/forniture-store';
 import { Router, NavigationExtras } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-import { element } from 'protractor';
+import { ToastController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,8 @@ export class FornitureStoreService {
   public static userExist = false;
 
   constructor(private alertController: AlertController, public fAuth: AngularFireAuth,
-              private router: Router, private firestore: AngularFirestore) { }
+              private router: Router, private firestore: AngularFirestore,
+              private toast: ToastController) { }
 
   OnRegister(email: string, password: string){
     this.fAuth.signInWithEmailAndPassword(email, password)
@@ -29,7 +30,7 @@ export class FornitureStoreService {
   signOut() {
     this.fAuth.signOut()
       .then(() => {
-        this.goTo('/home');
+        this.presentToast('Has cerrado sesión');
       })
       .catch(() => {
         console.log('error');
@@ -68,6 +69,14 @@ export class FornitureStoreService {
       buttons: ['Aceptar']
     });
     await alert.present();
+  }
+
+  async presentToast(m: string) {
+    const t = await this.toast.create({
+      message: m,
+      duration: 2000
+    });
+    t.present();
   }
 
   saveProduct(product: FornitureStore) {
