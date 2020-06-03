@@ -43,7 +43,6 @@ export class ProductUpdatePage implements OnInit {
 
     if (this.sliders.length > 0 && this.myForm.get('haveGalery').value) {
       productT = {
-        id,
         name,
         price,
         material,
@@ -56,7 +55,6 @@ export class ProductUpdatePage implements OnInit {
     }
     else {
       productT = {
-        id,
         name,
         price,
         material,
