@@ -25,7 +25,7 @@ export class NewProductPage implements OnInit {
   initForm() {
     this.myform = this.fb.group({
       name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-      price: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]+.[0-9]{2}')])],
+      price: ['', Validators.compose([Validators.required, Validators.pattern('[0-9]+[.][0-9]{2}|[0-9]+')])],
       material: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       size: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
       color: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
