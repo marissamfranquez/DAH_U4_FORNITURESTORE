@@ -26,24 +26,17 @@
         </ion-card-content>
       </ion-card>
 
-      <ion-card>
-        <p style="text-align: center;">GALERÍA DEL PRODUCTO</p>
-        <ion-slides mode="ios" pager="ios" class="slides">
-          <ion-slide>
-            <ion-img src="{{product.slider1}}"></ion-img>
-          </ion-slide>
-          <ion-slide>
-            <ion-img src="{{product.slider2}}"></ion-img>
-          </ion-slide>
-          <ion-slide>
-            <ion-img src="{{product.slider3}}"></ion-img>
-          </ion-slide>
-          <ion-slide>
-            <ion-img src="{{product.slider4}}"></ion-img>
-          </ion-slide>
-        </ion-slides>
-      </ion-card>
-
+      <p style="text-align: center;" *ngIf="product.sliders == null">ESTE PRODUCTO NO TIENE GALERÍA</p>
+      <ion-card-content *ngIf="product.sliders != null">
+        <ion-card>
+          <p style="text-align: center;">GALERÍA DEL PRODUCTO</p>
+          <ion-slides mode="ios" pager="ios" class="slides">
+            <ion-slide *ngFor="let slider of product.sliders">
+              <ion-img src="{{slider}}"></ion-img>
+            </ion-slide>
+          </ion-slides>
+        </ion-card>
+      </ion-card-content>
 
     </ion-card-content>
     <ion-card [style.display]="areVisibleButtons ? 'block' : 'none'">
@@ -54,7 +47,7 @@
             <ion-icon name="close-circle-outline"></ion-icon>
           </ion-chip>
           <ion-chip color="success" outline="true" (click)="detailProduct(product)">
-              <ion-icon name="refresh-circle-outline"></ion-icon>
+            <ion-icon name="refresh-circle-outline"></ion-icon>
           </ion-chip>
         </ion-note>
       </ion-card-content>

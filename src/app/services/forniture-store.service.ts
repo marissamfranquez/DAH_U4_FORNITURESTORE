@@ -4,6 +4,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { FornitureStore } from '../models/forniture-store';
 import { Router, NavigationExtras } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { element } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -71,6 +72,10 @@ export class FornitureStoreService {
 
   saveProduct(product: FornitureStore) {
     return this.firestore.collection('products').add(product);
+  }
+
+  saveProductWithId(id: string, product: FornitureStore) {
+    return this.firestore.collection('products').doc(id).set(product);
   }
 
   getProducts() {
