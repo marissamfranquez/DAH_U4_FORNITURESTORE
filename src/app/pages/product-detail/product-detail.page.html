@@ -15,17 +15,6 @@
   <ion-card>
     <ion-card-content>
 
-      <ion-card color="dark">
-        <ion-card-content>
-          <strong>Nombre del producto: {{product.name}}</strong>
-          <p>Precio: ${{product.price}}</p>
-          <p>Tamaño: {{product.size}}</p>
-          <p>Color: {{product.color}}</p>
-          <p>Material: {{product.material}}</p>
-
-        </ion-card-content>
-      </ion-card>
-
       <p style="text-align: center;" *ngIf="product.sliders == null">ESTE PRODUCTO NO TIENE GALERÍA</p>
       <ion-card-content *ngIf="product.sliders != null">
         <ion-card>
@@ -38,20 +27,31 @@
         </ion-card>
       </ion-card-content>
 
+      <ion-card>
+        <ion-card-content style="color: black; background-color: cadetblue;">
+          <strong>{{product.name}}</strong>
+          <p>Precio: ${{product.price}}</p>
+          <p>Tamaño: {{product.size}}</p>
+          <p>Color: {{product.color}}</p>
+          <p>Material: {{product.material}}</p>
+        </ion-card-content>
+      </ion-card>
+
     </ion-card-content>
-    <ion-card [style.display]="areVisibleButtons ? 'block' : 'none'">
-      <ion-card-content>
-        <ion-note slot="end">
-          <strong>{{product.name}} </strong>
-          <ion-chip color="danger" outline="true" (click)="delete(product.id)">
-            <ion-icon name="close-circle-outline"></ion-icon>
-          </ion-chip>
-          <ion-chip color="success" outline="true" (click)="detailProduct(product)">
-            <ion-icon name="refresh-circle-outline"></ion-icon>
-          </ion-chip>
-        </ion-note>
-      </ion-card-content>
-    </ion-card>
+  </ion-card>
+
+  <ion-card [style.display]="areVisibleButtons ? 'block' : 'none'">
+    <ion-card-content style="text-align: center;">
+      <ion-note slot="end">
+        <strong>{{product.name}} </strong>
+        <ion-chip color="danger" outline="true" (click)="delete(product.id)">
+          <ion-icon name="close-circle-outline"></ion-icon>
+        </ion-chip>
+        <ion-chip color="success" outline="true" (click)="detailProduct(product)">
+          <ion-icon name="refresh-circle-outline"></ion-icon>
+        </ion-chip>
+      </ion-note>
+    </ion-card-content>
   </ion-card>
 
 </ion-content>
