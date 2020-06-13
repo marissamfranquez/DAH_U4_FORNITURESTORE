@@ -16,7 +16,7 @@
     <ion-card-content>
 
       <p style="text-align: center;" *ngIf="product.sliders == null">ESTE PRODUCTO NO TIENE GALERÍA</p>
-      <ion-card-content *ngIf="product.sliders != null">
+      <ion-card-content *ngIf="product.sliders != null" style="background-color:lightgrey;">
         <ion-card>
           <p style="text-align: center;">GALERÍA DEL PRODUCTO</p>
           <ion-slides mode="ios" pager="ios" class="slides">
