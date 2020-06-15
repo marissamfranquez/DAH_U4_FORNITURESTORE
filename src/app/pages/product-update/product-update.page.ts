@@ -14,10 +14,20 @@ export class ProductUpdatePage implements OnInit {
   product: FornitureStore;
   myForm: FormGroup;
   sliders: Array<string> = Array();
+  interval = setInterval(() => {
+              if (this.product !== undefined) {
+                this.myForm.get('name').setValue(this.product.name);
+                this.myForm.get('price').setValue(this.product.price);
+                this.myForm.get('material').setValue(this.product.material);
+                this.myForm.get('size').setValue(this.product.size);
+                this.myForm.get('color').setValue(this.product.color);
+                this.myForm.get('image').setValue(this.product.image);
+                this.stopTimer();
+              }
+  }, 300);
 
   constructor(private router: Router, private service: FornitureStoreService,
               private actroute: ActivatedRoute, private formBuilder: FormBuilder) {
-                this.initForm();
                 this.actroute.queryParams.subscribe(
                   params => {
                     if (params && params.special){
@@ -26,9 +36,8 @@ export class ProductUpdatePage implements OnInit {
                     }
                   }
                 );
-
-
-}
+                this.initForm();
+  }
 
   updateProduct() {
     const id = this.product.id;
@@ -90,6 +99,10 @@ export class ProductUpdatePage implements OnInit {
       sliderForm: ['']
     });
     this.sliders = new Array();
+  }
+
+  stopTimer() {
+    clearInterval(this.interval);
   }
 
   addSlider() {
